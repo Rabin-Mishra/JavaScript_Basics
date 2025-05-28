@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS this keyword use</title>
+</head>
+
+<body>
+    <script>
+        var val1 = 50;
+        function myFunction() {
+            var val1 = 100;
+            alert('Value is ' + val1);
+            alert('This Value is ' + this.val1);
+        }
+        myFunction();
+    </script>
+    <p id="thisObj">Object referencing with this</p>
+    <script>
+        var random = {
+            name: "John",
+            age: 20,
+            info() {
+                document.getElementById("thisObj").innerHTML = "Name: " + this.name + ", Age: " + this.age;
+            }
+        }
+        random.info();
+
+    </script>
+    <p id="arrayID">Array use with this</p>
+    <script>
+        var arrThis = {
+            name: "Tutorial",
+            video: ["JavaScript", "HTML", "CSS"],
+            info2() {
+                var str = "";
+                this.video.forEach(function (element) {
+                    str += element + " ";
+                });
+                document.getElementById("arrayID").innerHTML = "Name: " + this.name + ", Videos: " + str;
+            }
+
+        }
+        arrThis.info2();
+    </script>
+
+</body>
+
+</html>

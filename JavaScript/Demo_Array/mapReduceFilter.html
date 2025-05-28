@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Reduce and Filter</title>
+</head>
+
+<body>
+    <div id="output"></div>
+    <script>
+        // Function to log and display each operation with a heading and the array result
+
+        function logOperation(title, array) {
+            const outputDiv = document.getElementById("output");
+            // Create a heading for the operation
+            const heading = document.createElement("h3");
+            heading.textContent = title;
+            // Create a paragraph to show the current array contents
+            const paragraph = document.createElement("p");
+            paragraph.textContent = array.join(", ");
+            // Append both heading and paragraph to the output area
+            outputDiv.appendChild(heading);
+            outputDiv.appendChild(paragraph);
+        }
+        //use of map funciton 
+        let num1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let num2 = num1.map(multiply);
+        function multiply(value) {
+            return value * 2;
+        }
+        logOperation("After map(multiply):", num2);
+        //use of filter function 
+        let num3 = num1.filter(comp);
+        function comp(value) {
+            return value > 4;
+        }
+        logOperation("After filter(comp):", num3);
+        //use of reduce funciton 
+        let num4 = num1.reduce(sum);
+        function sum(total, value) {
+            return total + value;
+        }
+        logOperation("After reduce(sum):", num4);
+    </script>
+</body>
+
+</html>

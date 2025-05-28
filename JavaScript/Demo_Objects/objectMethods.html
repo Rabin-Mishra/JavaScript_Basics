@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Methods</title>
+</head>
+
+<body>
+
+    <h1>Object Method Example</h1>
+
+    <!-- Display user's name -->
+    <p id="demo">Object Methods</p>
+
+    <!-- Button to trigger object method -->
+    <button id="clickMe">Click Me</button>
+
+    <script>
+        // Define an object with properties
+        let user = {
+            name: "John",
+            age: 30,
+        };
+
+        // Define a function
+        function sayHi() {
+            alert("Hello from " + user.name);
+        }
+
+        // Assign the function as a method to the object
+        user.message = sayHi;
+
+        // Display the user's name on the page
+        document.getElementById("demo").innerHTML = "User Name: " + user.name;
+
+        // Set the button's click event to call the object method
+        document.getElementById("clickMe").onclick = user.message;
+    </script>
+
+</body>
+
+</html>

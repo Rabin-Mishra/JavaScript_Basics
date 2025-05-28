@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation with the use of regex</title>
+    <script>
+        function validate() {
+            var val = document.getElementById("email").value;
+            var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (regex.test(val)) {
+                alert("Valid Email");
+                return true;
+            } else {
+                alert("Invalid Email");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="email" placeholder="Enter your email" required> <br>
+        <button onclick="validate()" type="button">Submit</button>
+    </form>
+</body>
+
+</html>

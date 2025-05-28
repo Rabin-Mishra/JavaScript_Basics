@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script>
+        // Function to log and display each operation with a heading and the array result
+        function logOperation(title, array) {
+            const outputDiv = document.getElementById("output");
+
+            // Create a heading for the operation
+            const heading = document.createElement("h3");
+            heading.textContent = title;
+
+            // Create a paragraph to show the current array contents
+            const paragraph = document.createElement("p");
+            paragraph.textContent = array.join(", ");
+
+            // Append both heading and paragraph to the output area
+            outputDiv.appendChild(heading);
+            outputDiv.appendChild(paragraph);
+        }
+
+        // Step 1: Create an initial array
+        let fruits = ["Banana", "Orange", "Apple", "Mango"];
+        logOperation("Original Array:", fruits); // Displays initial array
+
+        // Step 2: Add an element to the end of the array using push()
+        fruits.push("Kiwi"); // Adds "Kiwi" to the end
+        logOperation("After push('Kiwi'):", fruits);
+
+        // Step 3: Remove the last element using pop()
+        fruits.pop(); // Removes "Kiwi"
+        logOperation("After pop():", fruits);
+
+        // Step 4: Add an element to the beginning using unshift()
+        fruits.unshift("Pineapple"); // Adds "Pineapple" at the beginning
+        logOperation("After unshift('Pineapple'):", fruits);
+
+        // Step 5: Remove the first element using shift()
+        fruits.shift(); // Removes "Pineapple"
+        logOperation("After shift():", fruits);
+
+        // Step 6: Create a second array and merge it using concat()
+        let fruits2 = ["Grapes", "Peach", "Plum"];
+        let allFruits = fruits.concat(fruits2); // Merges fruits and fruits2
+        logOperation("After concat(fruits2):", allFruits);
+
+        // Step 7: Slice the array to extract elements from index 1 to 3 (not including index 4)
+        let slicedFruits = allFruits.slice(1, 4); // Returns a portion of the array
+        logOperation("After slice(1, 4):", slicedFruits);
+
+        // Step 8: Sort the array alphabetically
+        let sortedFruits = allFruits.slice().sort(); // Creates a sorted copy (original remains unchanged)
+        logOperation("After sort():", sortedFruits);
+
+        // Step 9: Reverse the array
+        let reversedFruits = allFruits.slice().reverse(); // Creates a reversed copy
+        logOperation("After reverse():", reversedFruits);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Creation in JavaScript</title>
+</head>
+
+<body>
+
+    <h1>Different Ways to Create Objects in JavaScript</h1>
+
+    <!-- Section 1: Object Literal -->
+    <h2>1. Using Object Literal</h2>
+    <p>This is the simplest way to create an object using curly braces <code>{key: value}</code>.</p>
+    <p id="literal"></p>
+    <hr>
+
+    <!-- Section 2: Using new Object() -->
+    <h2>2. Using <code>new Object()</code></h2>
+    <p>This method uses the built-in Object constructor to create an object.</p>
+    <p id="newObject"></p>
+    <hr>
+
+    <!-- Section 3: Using Constructor Function -->
+    <h2>3. Using Constructor Function</h2>
+    <p>This method defines a template function and uses the <code>new</code> keyword to create objects from it.</p>
+    <p id="constructorFunc"></p>
+
+    <!-- JavaScript Section -->
+    <script>
+        // 1. Object creation using object literal
+        var student = {
+            name: "John",
+            age: 20,
+            studies: "CS"
+        };
+
+        // Display object created using literal
+        document.getElementById("literal").innerHTML =
+            "Name: " + student.name + "<br>" +
+            "Age: " + student.age + "<br>" +
+            "Studies: " + student.studies;
+    </script>
+
+    <script>
+        // 2. Object creation using new Object()
+        var student1 = new Object();
+        student1.name = "Mohan";
+        student1.age = 20;
+        student1.studies = "BCE";
+
+        // Display object created using new Object()
+        document.getElementById("newObject").innerHTML =
+            "Name: " + student1.name + "<br>" +
+            "Age: " + student1.age + "<br>" +
+            "Studies: " + student1.studies;
+    </script>
+
+    <script>
+        // 3. Object creation using constructor function
+        function Stud(name, age, studies) {
+            this.name = name;
+            this.age = age;
+            this.studies = studies;
+        }
+
+        var student2 = new Stud("Rabin", 20, "BEIT");
+
+        // Display object created using constructor
+        document.getElementById("constructorFunc").innerHTML =
+            "Name: " + student2.name + "<br>" +
+            "Age: " + student2.age + "<br>" +
+            "Studies: " + student2.studies;
+    </script>
+
+</body>
+
+</html>

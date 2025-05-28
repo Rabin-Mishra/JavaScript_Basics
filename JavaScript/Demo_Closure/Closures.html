@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures in JS</title>
+</head>
+
+<body>
+    <p id="closureF">Closure Function</p>
+    <script>
+        function outerF() {
+            let a = 10;
+            function innerF() {
+                let b = 20;
+                return a + b;
+            }
+            return innerF();
+        }
+        var sum = outerF();
+        document.getElementById("closureF").innerHTML = "The sum is: " + sum;
+    </script>
+
+</body>
+
+</html>

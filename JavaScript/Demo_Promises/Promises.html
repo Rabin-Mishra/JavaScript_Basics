@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises in JS</title>
+</head>
+
+<body>
+    <p id="promises">Promises in JS</p>
+    <script>
+        let car = new Promise(function (resolve, reject) {
+            let fuel_Tank = true;
+            if (fuel_Tank) {
+                resolve("Car is ready to go");
+            }
+            else {
+                reject("Car is not ready to go");
+            }
+        });
+        car.then(function (message) {
+            document.getElementById("promises").innerHTML = message;
+        })
+            .catch(function (message) {
+                document.getElementById("promises").innerHTML = message;
+            });
+    </script>
+
+</body>
+
+</html>

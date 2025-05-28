@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Function Types Demo</title>
+</head>
+
+<body>
+    <h1>JavaScript Function Demonstrations</h1>
+
+    <!-- Regular Function -->
+    <h2>1. Regular Function</h2>
+    <p id="demoF">Result will appear here.</p>
+    <button onclick="myFunc(5)">Click to Square 5</button>
+    <script>
+        function myFunc(val) {
+            document.getElementById("demoF").innerHTML = "Square: " + (val * val);
+        }
+    </script>
+
+    <!-- Function Expression -->
+    <h2>2. Function Expression</h2>
+    <p id="FuncExp">Result will appear here.</p>
+    <script>
+        let x = function () {
+            return "Hello from function expression!";
+        }
+        document.getElementById("FuncExp").innerHTML = x();
+    </script>
+
+    <!-- Function Constructor -->
+    <h2>3. Function Constructor</h2>
+    <p id="funcCons"></p>
+    <script>
+        var myFuncCons = new Function("a", "b", "return a * b");
+        var resultCons = myFuncCons(4, 3);
+        document.getElementById("funcCons").innerHTML = "The product is: " + resultCons;
+    </script>
+
+    <!-- Self-Invoking Function -->
+    <h2>4. Self-Invoking Function</h2>
+    <p id="selfInv">Check the alert for output.</p>
+    <script>
+        (function () {
+            alert("Hello from self-invoking function!");
+        })();
+    </script>
+
+    <!-- Function as Values -->
+    <h2>5. Function as Values</h2>
+    <p id="funcVal"></p>
+    <script>
+        function Sum(a, b) {
+            return a + b;
+        }
+        let sum = Sum(5, 10);
+        document.getElementById("funcVal").innerHTML = "The sum is: " + sum;
+    </script>
+
+    <!-- Function as Objects -->
+    <h2>6. Function as Objects</h2>
+    <p id="funcObj">Check the alert for output.</p>
+    <script>
+        var body = "return Math.PI * rad * rad";
+        var circle = new Function("rad", body);
+        alert("Area of circle with radius 5: " + circle(5));
+    </script>
+
+    <!-- Arrow Function -->
+    <h2>7. Arrow Function</h2>
+    <p id="arrFunc"></p>
+    <script>
+        const myFunc1 = (p, q, r) => p * q * r;
+        let resultArrow = myFunc1(2, 3, 4);
+        document.getElementById("arrFunc").innerHTML = "The result is: " + resultArrow;
+    </script>
+
+    <!-- Generator Function -->
+    <h2>8. Generator Function</h2>
+    <p id="genFunc">Check the alerts for step-by-step results.</p>
+    <script>
+        function* myGen() {
+            yield 1;
+            yield 2;
+            return 3;
+        }
+        let gen = myGen();
+        alert("First yield: " + JSON.stringify(gen.next()));
+        alert("Second yield: " + JSON.stringify(gen.next()));
+        alert("Return value: " + JSON.stringify(gen.next()));
+    </script>
+
+</body>
+
+</html>

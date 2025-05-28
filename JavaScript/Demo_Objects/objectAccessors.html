@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Accessors</title>
+</head>
+
+<body>
+
+    <h1>Object Accessors: Getters and Setters</h1>
+
+    <p id="demo">For getters:</p>
+    <p id="demo1">For setters:</p>
+
+    <script>
+        // Example using getter
+        let car = {
+            name: "Ford",
+            model: "Mustang",
+            year: 1969,
+            color: "red",
+            get carName() {
+                return this.name;
+            }
+        };
+
+        document.getElementById("demo").innerHTML = "Car Name: " + car.carName;
+    </script>
+
+    <script>
+        // Example using setter and getter
+        let car1 = {
+            name: "Audi",
+            model: "A4",
+            year: 2020,
+            color: "",
+            set carColor(color) {
+                this.color = color;
+            },
+            get carColor() {
+                return this.color;
+            }
+        };
+
+        car1.carColor = "blue"; // calls setter
+
+        document.getElementById("demo1").innerHTML = "Car Color: " + car1.carColor; // calls getter
+    </script>
+
+</body>
+
+</html>

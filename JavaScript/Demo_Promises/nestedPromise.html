@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Promises in JS</title>
+</head>
+
+<body>
+    <p id="demo">Use of the nested Promises in JS</p>
+    <script>
+        let empty_tank = function () {
+            return new Promise(function (resolve, reject) {
+                resolve("Fuel Tank is empty");
+            })
+        }
+        let engine = function (msg) {
+            return new Promise(function (resolve, reject) {
+                resolve(msg + "\t Engine is not working");
+            })
+        }
+        let travel = function (msg) {
+            return new Promise(function (resolve, reject) {
+                resolve(msg + "\t Car is not ready to go");
+            })
+        }
+        empty_tank().then(function (result) {
+            return engine(result);
+        }).then(function (result) {
+            return travel(result);
+        }).then(function (result) {
+            document.getElementById("demo").innerHTML = result;
+        })
+    </script>
+
+</body>
+
+</html>

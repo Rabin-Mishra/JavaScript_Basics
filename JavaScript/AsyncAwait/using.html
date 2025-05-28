@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Async and await concepts</title>
+</head>
+
+<body>
+    <script>
+        let result = function (score) {
+            return new Promise(function (resolve, reject) {
+                if (score >= 50) {
+                    resolve("You have passed the exam");
+                } else {
+                    reject("You have failed the exam");
+                }
+            })
+        }
+        let grade = function (response) {
+            return new Promise(function (resolve, reject) {
+                console.log("Claculating your grade.......");
+                console.log("Your grade is from the response" + response);
+            })
+        }
+        async function calculateResult() {
+            try {
+                const response = await result(60);
+                console.log("Results received");
+                const fincalGrade = await grade(response);
+                console.log(fincalGrade);
+
+            } catch (error) {
+                console.log("Error: " + error);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

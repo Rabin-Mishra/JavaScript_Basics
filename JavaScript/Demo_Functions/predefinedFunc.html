@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predefined JavaScript Functions Demo</title>
+</head>
+
+<body>
+    <h1>Use of Predefined JavaScript Functions</h1>
+
+    <p>This page demonstrates the use of the following JavaScript functions:</p>
+
+    <ul>
+        <li><code>eval()</code></li>
+        <li><code>parseInt()</code></li>
+        <li><code>parseFloat()</code></li>
+        <li><code>escape()</code></li>
+        <li><code>unescape()</code></li>
+    </ul>
+
+    <h2>Example Outputs (Check Console)</h2>
+
+    <script>
+        // eval() example
+        let x = 10;
+        let y = 20;
+        let z = 4;
+        console.log("eval('x + y') =", eval("x + y"));   // 30
+        console.log("eval('x - y') =", eval("x - y"));   // -10
+        console.log("eval(z) =", eval(z));               // 4
+
+        // parseInt() example
+        let intString = "123.45px";
+        console.log("parseInt('123.45px') =", parseInt(intString));  // 123
+
+        // parseFloat() example
+        let floatString = "123.45px";
+        console.log("parseFloat('123.45px') =", parseFloat(floatString));  // 123.45
+
+        // escape() example
+        let url = "Hello World! @2025";
+        let escapedURL = escape(url);
+        console.log("escape('Hello World! @2025') =", escapedURL);   // Hello%20World%21%20%402025
+
+        // unescape() example
+        console.log("unescape(escapedURL) =", unescape(escapedURL));  // Hello World! @2025
+    </script>
+</body>
+
+</html>
+<!-- Summary of What It Shows:
+eval() evaluates string expressions as code.
+
+parseInt() converts a string to an integer, ignoring anything after non-numeric characters.
+
+parseFloat() parses a string into a floating-point number.
+
+escape() encodes special characters for use in URLs (legacy use).
+
+unescape() decodes the escaped string back to normal text (legacy use).
+
+Let me know if you'd like the same page with live output using DOM elements instead of the console.
+ -->
