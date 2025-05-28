@@ -1,0 +1,101 @@
+/* Reset some default styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f7f7f7;
+    color: #222;
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+}
+
+/* Choices styling */
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.choice {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 18px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    width: 120px;
+}
+
+.choice:hover {
+    transform: scale(1.07);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.choice img {
+    max-width: 80px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: auto;
+    object-fit: contain;
+}
+
+/* Scoreboard styling */
+.score-board {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 25px;
+}
+
+.score {
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px 32px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+#user-score,
+#comp-score {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+    color: #007bff;
+}
+
+.score p:last-child {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Message styling */
+.msg-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.msg {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px 40px;
+    font-size: 1.3rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    color: #333;
+    text-align: center;
+}

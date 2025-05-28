@@ -1,0 +1,8 @@
+/* creating a new class in css and try to append this class to <p> element */
+p.newClass {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* creating a new class in css and try to append this class to <p> element */

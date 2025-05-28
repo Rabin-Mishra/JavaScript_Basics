@@ -1,0 +1,22 @@
+/* //give css for th div with clas as box */
+.box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode {
+    background-color: black;
+    text-color: white;
+}
+
+.light-mode {
+    background-color: white;
+    text-color: black;
+}
